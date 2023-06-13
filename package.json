@@ -7,8 +7,13 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "crypto-js": "^4.1.1",
+    "expo": "^48.0.19",
+    "jsap": "^2.0.0",
+    "preact": "^10.15.1",
+    "preact-router": "^4.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.12.1",
     "react-scripts": "5.0.1",
     "sass": "^1.63.3",
     "web-vitals": "^2.1.4"
@@ -36,5 +41,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.8.1",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "parcel-bundler": "^1.12.5",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.86.0",
+    "webpack-dev-server": "^4.15.1"
   }
 }

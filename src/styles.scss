@@ -1,17 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Arial');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-$primary-color: #333;
-$secondary-color: #666;
-$background-color: #f2f2f2;
+$primary-color: #5E7D6E;
+$secondary-color: #E7E5DB;
+$background-color: #F6F2EE;
+$accent-color: #F08A5D;
+$font-family: 'Montserrat', sans-serif;
+$parallax-layer-background: url("./images/parallax-background.jpg") center center / cover no-repeat;
+$parallax-layer-foreground: url("./images/parallax-foreground.png") center center / cover no-repeat;
 
 body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-family: Arial, sans-serif;
+  font-family: $font-family;
 }
 
-/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
@@ -21,188 +24,202 @@ body {
   background-color: $primary-color;
   padding: 20px;
   color: #fff;
-}
 
-.sidebar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.sidebar li {
-  margin-bottom: 10px;
-}
-
-.sidebar a {
-  color: #fff;
-  text-decoration: none;
-  display: block;
-  padding: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.sidebar a:hover {
-  background-color: $secondary-color;
-}
-
-/* Content */
-.content {
-  margin-left: 220px;
-  padding: 20px;
-}
-
-.parallax {
-  perspective: 1px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.parallax-group {
-  position: relative;
-  height: 100vh;
-  transform-style: preserve-3d;
-}
-
-.parallax-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.parallax-layer__background {
-  transform: translateZ(-1px) scale(2);
-}
-
-.parallax-layer__foreground {
-  transform: translateZ(1px) scale(2);
-}
-
-.parallax-content {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-  background-color: $background-color;
-  color: $primary-color;
-}
-
-h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: $primary-color;
-  color: #fff;
-  font-size: 18px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: $secondary-color;
-}
-
-/* Rest of the previous styles */
-
-// Get Started button functionality
-#getStartedBtn {
-  /* colors */
-  $darkBlue: #217093;
-  $medBlue: #4eb8dd;
-  $lightBlue: #ddf1fa;
-  $inputBG: #f3fafd;
-
-  html {
-    width: 100%;
-    height: 100%;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 
-  body {
-    background-color: #eff3f4;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    font-size: 16px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  form {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    background-color: #FFF;
-    margin: 0 auto;
-    padding: 35px;
-    box-shadow: 0px 0px 15px 1px rgba(40, 40, 40, 0.1);
-  }
-
-  .header {
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-
-  .form-group label {
+  li {
     margin-bottom: 10px;
   }
 
-  .form-group input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: $inputBG;
-  }
-
-  .submit-btn {
+  a {
+    color: #fff;
+    text-decoration: none;
     display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
-    background-color: $darkBlue;
-    color: #FFF;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    padding: 5px;
     transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+.content {
+  margin-left: 200px;
+  padding: 20px;
+
+  .parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .parallax-group {
+      position: relative;
+      height: 100vh;
+      transform-style: preserve-3d;
+
+      .parallax-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        &__background {
+          transform: translateZ(-1px) scale(2);
+          background: $parallax-layer-background;
+        }
+
+        &__foreground {
+          transform: translateZ(1px) scale(2);
+          background: $parallax-layer-foreground;
+        }
+      }
+    }
   }
 
-  .submit-btn:hover {
-    background-color: $medBlue;
+  .parallax-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    background-color: $background-color;
+    color: $primary-color;
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .start-adventure-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: $accent-color;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+    }
   }
 
-  .success-msg {
-    text-align: center;
-    color: green;
-    margin-top: 20px;
+  .newsletter-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+
+    .newsletter-content {
+      background-color: $background-color;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      form {
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        label {
+          margin-bottom: 10px;
+          font-weight: 700;
+        }
+
+        input[type="email"] {
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid $accent-color;
+          border-radius: 4px;
+          background-color: $secondary-color;
+          color: $primary-color;
+        }
+      }
+
+      .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        background-color: $accent-color;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken($accent-color, 10%);
+        }
+      }
+
+      .success-msg {
+        color: green;
+        margin-top: 20px;
+      }
+
+      .error-msg {
+        color: red;
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: $accent-color;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken($accent-color, 10%);
+        }
+      }
+    }
   }
 
-  .error-msg {
-    text-align: center;
-    color: red;
-    margin-top: 20px;
+  .cloud-innovations {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+
+    img {
+      width: 150px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
   }
 }
